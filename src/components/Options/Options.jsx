@@ -1,13 +1,17 @@
 import s from "./Options.module.css";
 
-const Options = () => {
-  const [counter, setCounter] = useState("");
+const Options = ({ updateFeedback }) => {
   return (
     <div className={s.wrapper}>
-      <button className={s.button}>Good</button>
-      <button className={s.button}>Neutral</button>
-      <button className={s.button}>Bad</button>
-      <button className={s.button}>Reset</button>
+      <button onClick={() => updateFeedback("good")} className={s.button}>
+        Good
+      </button>
+      <button onClick={() => updateFeedback("neutral")} className={s.button}>
+        Neutral
+      </button>
+      <button onClick={() => updateFeedback("bad")} className={s.button}>
+        Bad
+      </button>
     </div>
   );
 };
