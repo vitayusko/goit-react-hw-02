@@ -1,6 +1,7 @@
 import s from "./Options.module.css";
 
 const Options = () => {
+  const [counter, setCounter] = useState("");
   return (
     <div className={s.wrapper}>
       <button className={s.button}>Good</button>

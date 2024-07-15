@@ -1,12 +1,12 @@
 import s from "./Feedback.module.css";
-
+import { Options } from "../Options/Options";
 const Feedback = () => {
   return (
     <div>
-          <ul className={ s.list}>
-        <li>Good:</li>
-        <li>Neutral:</li>
-        <li>Bad:</li>
+      <ul className={s.list}>
+        <li>Good:{good}</li>
+        <li>Neutral: {neutral}</li>
+        <li>Bad:{bad}</li>
       </ul>
     </div>
   );
