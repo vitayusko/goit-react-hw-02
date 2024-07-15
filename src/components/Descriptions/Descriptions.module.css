@@ -1,0 +1,15 @@
+.mainName {
+  color: #2e2f42;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.paragraph {
+  color: #2f2f34;
+  font-size: 15px;
+  font-style: normal;
+  line-height: normal;
+  margin-top: 10px;
+}
