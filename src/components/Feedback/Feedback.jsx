@@ -1,14 +1,10 @@
+import React from "react";
 import s from "./Feedback.module.css";
-// import { Options } from "../Options/Options";
+import Message from "../Message/Message";
 
-const Feedback = ({ good, neutral, bad }) => {
-  const totalFeedback = good + neutral + bad;
-  const handleReset = () => {
-    setTotalFeedback(0);
-  };
-
+const Feedback = ({ good, neutral, bad, totalFeedback, positiveFeedback }) => {
   if (totalFeedback === 0) {
-    return <Notification message="No reviews yet." />;
+    return <Message message="No reviews yet." />;
   }
 
   return (
@@ -17,10 +13,9 @@ const Feedback = ({ good, neutral, bad }) => {
         <li>Good: {good}</li>
         <li>Neutral: {neutral}</li>
         <li>Bad: {bad}</li>
+        <li>Total Feedback: {totalFeedback}</li>
+        <li>Positive Feedback: {positiveFeedback}%</li>
       </ul>
-      <button onClick={handleReset} className={s.button}>
-        Reset
-      </button>
     </div>
   );
 };
