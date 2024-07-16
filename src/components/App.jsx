@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
 import Descriptions from "./Descriptions/Descriptions";
 import Feedback from "./Feedback/Feedback";
@@ -10,6 +10,17 @@ const App = () => {
     neutral: 0,
     bad: 0,
   });
+
+  useEffect(() => {
+    const savedFeedback = localStorage.getItem("feedback");
+    if (savedFeedback) {
+      setFeedback(JSON.parse(savedFeedback));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("feedback", JSON.stringify(feedback));
+  }, [feedback]);
 
   const updateFeedback = (type) => {
     setFeedback((prevFeedback) => ({
